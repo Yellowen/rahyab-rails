@@ -1,5 +1,6 @@
 RahyabRails::Engine.routes.draw do
   in_dashboard do
-    resources :SMS
+    get 'sms'
+    post 'sms'
   end
 end
