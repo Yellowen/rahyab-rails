@@ -1,7 +1,7 @@
 require 'test_helper'
 
 module RahyabRails
-  class SmTest < ActiveSupport::TestCase
+  class SMSTest < ActiveSupport::TestCase
     # test "the truth" do
     #   assert true
     # end

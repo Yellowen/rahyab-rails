@@ -1,4 +1,4 @@
-class CreateRahyabRailsSms < ActiveRecord::Migration
+class CreateRahyabRailsSMS < ActiveRecord::Migration
   def change
     create_table :rahyab_rails_sms do |t|
       t.string :number
