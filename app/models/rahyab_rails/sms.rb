@@ -1,5 +1,5 @@
 module RahyabRails
   class SMS < ActiveRecord::Base
-    validates :number, :text, :status, presence: true
+    validates :source, :destination, :text, :status, presence: true
   end
 end
