@@ -5,3 +5,6 @@ module RahyabRails
 
   end
 end
+
+
+require 'rahyab_rails/rahyab'
