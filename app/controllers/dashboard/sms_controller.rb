@@ -1,4 +1,4 @@
-class Dashboard::SMSController < Dashboard::ApplicationController
+class RahyabRails::Dashboard::SMSController < ::Dashboard::ApplicationController
   def quick_send
     sms = Rahyab::SMS.new(@url, @user, @password, @company)
     if sms.send_sms(sms_params[:source], sms_params[:destinations], sms_params[:text])

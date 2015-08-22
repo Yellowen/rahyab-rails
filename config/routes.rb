@@ -1,6 +1,8 @@
 RahyabRails::Engine.routes.draw do
   in_dashboard do
-    get 'sms'
-    post 'sms'
+    scope :sms do
+      get 'quick_send', as: 'sms_quck_send'
+      post 'quick_send'
+    end
   end
 end
