@@ -1,3 +1,4 @@
+require 'rahyab'
 module RahyabRails
   class Engine < ::Rails::Engine
     isolate_namespace RahyabRails

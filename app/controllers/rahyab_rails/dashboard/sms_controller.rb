@@ -5,25 +5,33 @@ class RahyabRails::Dashboard::SMSController < ::Dashboard::ApplicationController
   end
 
   def quick_send
-    @sms = ::RahyabRails::SMS.new(
-      source: source,
-      destination: destination,
-      text: sms_params[:text])
-
-    respond_to do |f|
-      if @sms.save
-        RahyabRails::SendSMSWorker.perform_async(@sms.id)
-        f.js
-        f.html
+    ids = []
+    params[:destinations].each do |destination|
+      sms = ::RahyabRails::SMS.new(
+        source: sms_params[:source],
+        destination: destination,
+        text: sms_params[:text])
+      if (sms.save)
+        ids.push(destination)
       else
-        f.js { render 'faalis/shared/error' }
+        error = true
+      end
+
+      respond_to do |f|
+        if !error
+          RahyabRails::SendSMSWorker.perform_async(ids)
+          f.js
+          f.html
+        else
+          f.js { render 'faalis/shared/error' }
+        end
       end
     end
   end
-
   private
 
-    def sms_params
-      params.require(:sms).permit(:source, :destinations, :text)
-    end
+  def sms_params
+    params.require(:sms).permit(:source, :destinations, :text)
+  end
+
 end
