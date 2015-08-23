@@ -7,7 +7,7 @@ PATH
       sidekiq
 
 PATH
-  remote: ../Faalis
+  remote: ../Faalis/
   specs:
     faalis (2.0.0.rc1)
       admin_lte-rails (~> 2.2.0.7)
@@ -153,9 +153,6 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    libxml-ruby (2.8.0)
-    libxml-to-hash (0.2.1)
-      libxml-ruby
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -182,10 +179,6 @@ GEM
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
-    rahyab (0.1.0)
-      builder
-      libxml-ruby
-      libxml-to-hash
     rails (4.2.3)
       actionmailer (= 4.2.3)
       actionpack (= 4.2.3)
@@ -200,7 +193,7 @@ GEM
     rails-assets-admin-lte (2.3.0)
     rails-assets-bootstrap (3.3.4)
       rails-assets-jquery (>= 1.9.1)
-    rails-assets-bootstrap-daterangepicker (2.0.8)
+    rails-assets-bootstrap-daterangepicker (2.0.9)
       rails-assets-jquery (>= 1.10)
       rails-assets-moment (>= 2.9.0)
     rails-assets-bootstrap-rtl (3.3.4)
@@ -235,7 +228,7 @@ GEM
       redis (~> 3.0, >= 3.0.4)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
-    sass (3.4.16)
+    sass (3.4.17)
     sass-rails (5.0.3)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
@@ -259,7 +252,7 @@ GEM
       activesupport (>= 3.1, < 5.0)
       railties (>= 3.1, < 5.0)
       slim (~> 3.0)
-    sprockets (3.3.2)
+    sprockets (3.3.3)
       rack (~> 1.0)
     sprockets-rails (2.3.2)
       actionpack (>= 3.0)
@@ -284,7 +277,6 @@ PLATFORMS
 
 DEPENDENCIES
   faalis!
-  rahyab
   rahyab_rails!
   rails-assets-admin-lte
   rails-assets-bootstrap-daterangepicker
