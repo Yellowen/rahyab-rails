@@ -3,6 +3,7 @@ PATH
   specs:
     rahyab_rails (0.0.1)
       faalis
+      rahyab
       rails (~> 4.2.0)
       sidekiq
 
@@ -153,6 +154,9 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    libxml-ruby (2.8.0)
+    libxml-to-hash (0.2.1)
+      libxml-ruby
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -179,6 +183,10 @@ GEM
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rahyab (0.1.0)
+      builder
+      libxml-ruby
+      libxml-to-hash
     rails (4.2.3)
       actionmailer (= 4.2.3)
       actionpack (= 4.2.3)
