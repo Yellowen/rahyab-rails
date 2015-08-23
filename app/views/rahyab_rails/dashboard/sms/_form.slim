@@ -1,0 +1,16 @@
+div
+  = form_tag(dashboard_quick_send_path, remote: true, method: method) do
+    .row
+      .col-sm-12.col-lg-9
+        .box-header
+          .box-title
+            = _('New SMS')
+        .box-body
+          .row
+            .col-sm-12.col-lg-6
+              .form-group data-name="quck_send"
+                label for="source"
+                  = ('Source Number')
+                option#source.form-control[placeholder==(_('Source Number')) name="sms[source]" type="text" required value=(@sms.source)]
+                  /!- @numbers.each do |number|
+                  /!  select id=("number")
