@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.description = 'Rails GEM to use Rahyab SMS Service'
   s.license     = "GPL-2"
 
-  s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
+  s.files = Dir['{app,config,db,lib}/**/*', 'LICENSE', 'Rakefile', 'README.rdoc']
 
   s.add_dependency 'rails', "~> 4.2.0"
   s.add_dependency 'faalis'
