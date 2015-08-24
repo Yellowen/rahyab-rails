@@ -1,5 +1,5 @@
 module RahyabRails
-  class RahyabRails::NumberPolicy < ApplicationPolicy
+  class NumberPolicy < ApplicationPolicy
     class Scope < Scope
       def resolve
         scope

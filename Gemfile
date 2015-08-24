@@ -13,7 +13,7 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 gem 'faalis', path: '../Faalis/'
-gem 'rahyab', path: '../rahyab/'
+#gem 'rahyab', path: '../rahyab/'
 
 # These items added because of Faalis bug
 gem "rails-assets-admin-lte"
