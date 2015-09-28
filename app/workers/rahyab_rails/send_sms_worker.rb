@@ -1,3 +1,5 @@
+require 'sidekiq'
+
 class RahyabRails::SendSMSWorker
   include ::Sidekiq::Worker
 
