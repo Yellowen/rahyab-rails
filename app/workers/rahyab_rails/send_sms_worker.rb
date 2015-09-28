@@ -1,5 +1,5 @@
 class RahyabRails::SendSMSWorker
-  include Sidekiq::Worker
+  include ::Sidekiq::Worker
 
   def perform(sms_ids)
     sms_ids.each do |sms_id|
