@@ -1,12 +1,12 @@
 RahyabRails::Engine.routes.draw do
   in_dashboard do
     scope :rahyab_rails do
-      resources :numbers
-    end
-
-    scope :sms do
-      get 'quick_send', to: 'sms#new_quick_send', as: 'sms_quick_send'
-      post 'quick_send', to: 'sms#quick_send'
+      resources :messages do
+        collection do
+          get 'bulk', to: 'rahyab_rails/messages#bulk', as: :bulk
+        end
+      end
+      resources :service_numbers
     end
   end
 end
