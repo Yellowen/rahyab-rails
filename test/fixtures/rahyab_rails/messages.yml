@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service_number_id: 
+  destination: MyText
+  text: MyText
+  status: MyString
+  delivered_at: 2015-10-15 10:08:49
+
+two:
+  service_number_id: 
+  destination: MyText
+  text: MyText
+  status: MyString
+  delivered_at: 2015-10-15 10:08:49
