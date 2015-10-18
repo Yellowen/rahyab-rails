@@ -6,7 +6,7 @@ class RahyabRails::Dashboard::MessagesController < Dashboard::ApplicationControl
                         icon_class: 'send',
                         model: RahyabRails::Message,
                         policy: :send,
-                        class: 'btn-info')
+                        class: 'btn-flat bg-purple')
   end
 
   def bulk
