@@ -1,0 +1,36 @@
+= semantic_form_for(:message, url: bulk_dashboard_messages_path, method: :post, remote: true) do |f|
+  .row
+    .col-sm-12.col-lg-12
+      .box.box-primary
+        .box-header
+          .box-title
+            / TODO: add a DSL to provide a message for this section
+        .box-body
+          .row
+            .col-sm-12.col-lg-6.col-md-6
+              .form-group data-name=('service_number')
+                = f.input :service_number
+
+          .row
+            .col-sm-12.col-lg-6.col-md-6
+              .form-group data-name=('text')
+                = f.input :text, as: :text
+
+            .col-sm-12.col-lg-6.col-md-6
+              .form-group data-name=('destinations')
+                = f.input :destinations, as: :text
+
+
+        .box-footer
+          .row
+            .col-sm-2
+              button.btn.btn-success.btn-block type="submit"
+                i.fa.fa-check
+                |
+                = t('faalis.save')
+
+            .col-sm-2.pull-right
+
+              a.btn.btn-danger.btn-block href=(dashboard_messages_path)
+                i.fa.fa-times
+                = t('faalis.cancel')

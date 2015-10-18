@@ -15,6 +15,10 @@ gemspec
 gem 'faalis', path: '../Faalis/'
 #gem 'rahyab', path: '../rahyab/'
 
+group :development do
+  gem 'yellowen-misc'
+end
+
 # These items added because of Faalis bug
 gem "rails-assets-admin-lte"
 gem "rails-assets-bootstrap-rtl"

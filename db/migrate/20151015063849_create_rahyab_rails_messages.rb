@@ -1,7 +1,8 @@
 class CreateRahyabRailsMessages < ActiveRecord::Migration
   def change
     create_table :rahyab_rails_messages do |t|
-      t.references :service_number_id
+      t.belongs_to :service_number, index: true
+      t.integer :user_id, index: true
       t.text :destination
       t.text :text
       t.string :status

@@ -3,7 +3,8 @@ RahyabRails::Engine.routes.draw do
     scope :rahyab_rails do
       resources :messages do
         collection do
-          get 'bulk', to: 'rahyab_rails/messages#bulk', as: :bulk
+          get 'bulk', to: 'messages#bulk', as: :bulk
+          post 'bulk', to: 'messages#bulk_send'
         end
       end
       resources :service_numbers

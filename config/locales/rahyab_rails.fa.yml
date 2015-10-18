@@ -1,0 +1,10 @@
+fa:
+  message: پیام
+  messages: پیام ها
+  main_app:
+    source_number: شماره مبدا
+    destination: شماره مقصد
+    status: وضعیت
+
+  rahyab_rails:
+    bulk_send: ارسال دسته جمعی
