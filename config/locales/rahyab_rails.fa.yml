@@ -1,6 +1,7 @@
 fa:
   message: پیام
   messages: پیام ها
+
   main_app:
     source_number: شماره مبدا
     destination: شماره مقصد
