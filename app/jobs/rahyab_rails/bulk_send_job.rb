@@ -2,13 +2,18 @@ module RahyabRails
   class BulkSendJob < ActiveJob::Base
     queue_as :default
 
-    def perform(source_number, cell_numbers, text)
-      api = RahyabRails::API.new
+    def perform(source_number, cell_numbers, text, user_id)
+      source = ServiceNumber.find_by(number: source_number)
+      api    = RahyabRails::API.new
+
       cell_numbers.each do |cell_number|
 
         unless cell_number.nil?
-          message = Message.new
-          message.
+          message = Message.new(user_id: user_id,
+                                text: text,
+                                destination: cell_number,
+                                service_number: source)
+
           Rails.logger.info "Send to: #{cell_number}"
           result = api.send_sms(source_number, [cell_number], text)
           Rails.logger.info "Sent: #{result}"
@@ -33,7 +38,7 @@ module RahyabRails
             message.status = 'Failed to send'
           end
         end
-
+        message.deliveried_at = DateTime.today
         message.save
     end
   end
