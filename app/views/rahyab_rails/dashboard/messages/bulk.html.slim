@@ -9,7 +9,7 @@
           .row
             .col-sm-12.col-lg-6.col-md-6
               .form-group data-name=('service_number')
-                = f.input :service_number
+                = f.input :service_number, as: :select, collection: RahyabRails::ServiceNumber.all.map { |x| [x.number, x.number]}
 
           .row
             .col-sm-12.col-lg-6.col-md-6

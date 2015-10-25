@@ -15,6 +15,18 @@ class RahyabRails::Dashboard::MessagesController < Dashboard::ApplicationControl
 
 
   def bulk_send
+    source = RahyabRails::ServiceNumber.find_by(number: params[:service_number])
 
+    if source.nil?
+      return render json: { error: t('source_is_missing'),
+                            fields: [:service_number] }, status: 400
+    end
+
+    user   = current_user
+    dests  = params[:destinations].split(',').map { |x| x.chomp }
+    RahyabRails::BulkSendJob.perform_later(source, dests,
+                                           params[:text], user.id)
+
+    successful_response(:index, t('messages_queued'))
   end
 end
