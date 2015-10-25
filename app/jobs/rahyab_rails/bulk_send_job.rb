@@ -40,6 +40,7 @@ module RahyabRails
         end
         message.deliveried_at = DateTime.today
         message.save
+      end
     end
   end
 end
