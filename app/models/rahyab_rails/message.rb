@@ -16,6 +16,6 @@
 module RahyabRails
   class Message < ActiveRecord::Base
     belongs_to :service_number
-
+    belongs_to :user, class_name: 'Faalis::User'
   end
 end

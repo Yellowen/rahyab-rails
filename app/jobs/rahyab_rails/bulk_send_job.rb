@@ -9,10 +9,10 @@ module RahyabRails
       cell_numbers.each do |cell_number|
 
         unless cell_number.nil?
-          message = Message.new(user_id: user_id,
-                                text: text,
-                                destination: cell_number,
-                                service_number: source)
+          message = RahyabRails::Message.new(user_id: user_id,
+                                             text: text,
+                                             destination: cell_number,
+                                             service_number: source)
 
           Rails.logger.info "Send to: #{cell_number}"
           result = api.send_sms(source_number, [cell_number], text)
@@ -34,11 +34,11 @@ module RahyabRails
 
           # puts "Batch: #{result}  Status: #{status} Time: #{time}"
           else
-            Rails.logger.warning "Send failed to: #{cell_number}"
+            Rails.logger.warn "Send failed to: #{cell_number}"
             message.status = 'Failed to send'
           end
         end
-        message.deliveried_at = DateTime.today
+        message.delivered_at = DateTime.now
         message.save
       end
     end
