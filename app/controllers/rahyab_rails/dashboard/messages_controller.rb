@@ -6,7 +6,7 @@ class RahyabRails::Dashboard::MessagesController < Dashboard::ApplicationControl
                         icon_class: 'send',
                         model: RahyabRails::Message,
                         policy: :send,
-                        class: 'btn-flat bg-purple')
+                        class: 'bg-purple')
   end
 
   def bulk
@@ -25,7 +25,7 @@ class RahyabRails::Dashboard::MessagesController < Dashboard::ApplicationControl
 
     user   = current_user
     dests  = params[:message][:destinations].split(',').map { |x| x.chomp }
-    RahyabRails::BulkSendJob.perform_later(source, dests,
+    RahyabRails::BulkSendJob.perform_later(source.number, dests,
                                            params[:message][:text], user.id)
 
     successful_response(:index, t('messages_queued'))

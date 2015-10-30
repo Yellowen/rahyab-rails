@@ -4,6 +4,7 @@ module RahyabRails
 
     def perform(source_number, cell_numbers, text, user_id)
       source = ServiceNumber.find_by(number: source_number)
+      fail "can't fetch service number by #{source_number}" if source.nil?
       api    = RahyabRails::API.new
 
       cell_numbers.each do |cell_number|
