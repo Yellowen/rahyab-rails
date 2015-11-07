@@ -1,4 +1,7 @@
 class RahyabRails::Dashboard::MessagesController < Dashboard::ApplicationController
+
+  before_action :setup_named_routes
+
   in_index do |index|
     index.attributes :id, :source_number, :destination, :status
     index.action_button(label: I18n.t('rahyab_rails.bulk_send'),
