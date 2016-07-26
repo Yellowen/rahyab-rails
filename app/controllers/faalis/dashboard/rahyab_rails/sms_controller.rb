@@ -1,4 +1,4 @@
-class RahyabRails::Dashboard::SMSController < ::Dashboard::ApplicationController
+class Faalis::Dashboard::RahyabRails::SMSController < ::Faalis::Dashboard::ApplicationController
 
   def new_quick_send
     @sms = ::RahyabRails::SMS.new
@@ -28,6 +28,7 @@ class RahyabRails::Dashboard::SMSController < ::Dashboard::ApplicationController
       end
     end
   end
+
   private
 
   def sms_params
