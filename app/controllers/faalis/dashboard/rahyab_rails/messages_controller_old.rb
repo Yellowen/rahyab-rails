@@ -1,22 +1,16 @@
 class Faalis::Dashboard::RahyabRails::MessagesController < ::Faalis::Dashboard::ApplicationController
 
-  before_action :setup_named_routes
+  # before_action :setup_named_routes
 
   in_index do |index|
     index.attributes :id, :source_number, :destination, :status
-    index.action_button(label: I18n.t('rahyab_rails.bulk_send'),
-                        href:  bulk_dashboard_messages_path,
-                        icon_class: 'send',
-                        model: RahyabRails::Message,
-                        policy: :send,
-                        class: 'bg-purple')
-
-    index.action_button(label: I18n.t('rahyab_rails.bulk_send1'),
-                        href:  bulk_dashboard_messages_path,
-                        icon_class: 'send',
-                        model: RahyabRails::Message,
-                        policy: :send,
-                        class: 'bg-olive')
+    # index.action_button(name: 'bulk_send',
+    #                     label: I18n.t('rahyab_rails.bulk_send'),
+    #                     href:  bulk_dashboard_messages_path,
+    #                     icon_class: 'send',
+    #                     model: RahyabRails::Message,
+    #                     policy: :send,
+    #                     class: 'bg-purple')
 
   end
 

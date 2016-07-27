@@ -5,7 +5,7 @@ Faalis::Routes.draw(::RahyabRails::Engine) do
 
   faalis do
     in_dashboard do
-      scope :rahyab_rails do
+      namespace :rahyab_rails do
         resources :messages do
           collection do
             get 'bulk', to: 'messages#bulk', as: :bulk
